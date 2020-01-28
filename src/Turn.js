@@ -13,11 +13,20 @@ class Turn {
   }
 
   evaluateGuess() {
-    if(this.guess.toUpperCase() === this.card.correctAnswer.toUpperCase()) {
+    if (this.guess.toUpperCase() === this.card.correctAnswer.toUpperCase()) {
       return true;
     } else {
       return false;
       }
+  }
+
+  giveFeedback() {
+    // console.log(this.evaluateGuess());
+    if (this.evaluateGuess() === true) {
+      return "You got it! Nice Job";
+    } else {
+      return "Try again buddy!";
+    }
   }
 }
 
