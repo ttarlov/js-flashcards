@@ -29,4 +29,13 @@ describe('Turn', function() {
     const turn = new Turn('object', card);
     expect(turn.evaluateGuess()).to.equal(true);
   });
+
+  it('It should give feedback on the answer', function() {
+    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const turn = new Turn('object', card);
+    expect(turn.evaluateGuess()).to.equal(true);
+    // console.log(turn.giveFeedback());
+    expect(turn.giveFeedback()).to.equal("You got it! Nice Job");
+  });
+
 });
