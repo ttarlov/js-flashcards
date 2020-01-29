@@ -21,7 +21,6 @@ class Turn {
   }
 
   giveFeedback() {
-    // console.log(this.evaluateGuess());
     if (this.evaluateGuess() === true) {
       return "You got it! Nice Job";
     } else {
