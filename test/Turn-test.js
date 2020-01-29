@@ -17,8 +17,8 @@ describe('Turn', function() {
   });
 
   it('should take in two arguments: string and card obj', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('pug', card);
+    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     expect(turn.returnGuess()).to.equal('pug');
     expect(turn.returnCard()).to.equal(card);
   });
