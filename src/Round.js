@@ -5,6 +5,7 @@ class Round {
     this.deck = deck.cards;
     this.turns = 0;
     this.incorrectGuesses = [];
+    this.timer = 0;
   }
 
   takeTurn(guess) {
@@ -25,9 +26,21 @@ class Round {
     return this.deck[this.turns];
   }
 
-  endRound() {
+  startTimer() {
+    this.timer = new Date();
+  }
 
+  endTimer() {
+    var endTime = new Date();
+    var diff = endTime - this.timer
+    var seconds = Math.round(diff / 1000);
+    var minutes = Math.round(diff / 60000)
+    console.log(`****The Round took you ${minutes} Minutes and ${seconds} Seconds****`)
+  }
+
+  endRound() {
     console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of questions`);
+    this.endTimer();
     return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of questions`;
   }
 
